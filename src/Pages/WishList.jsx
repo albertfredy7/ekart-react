@@ -22,7 +22,7 @@ function WishList() {
 
   
   return (
-    <div style={{marginTop:'150px'}}>
+    <div style={{overflow:'hidden',marginTop:'150px'}}>
       <Row className='ms-5'>
         { wishlistArray?.length>0?
         wishlistArray?.map((item) => (
@@ -43,7 +43,7 @@ function WishList() {
         ))
           
         :
-        <div style={{height:'50vh'}} className='d-flex justify-content-center align-items-center flex-column'>
+        <div style={{ height:'50vh'}} className='d-flex justify-content-center align-items-center flex-column'>
           <img src="https://www.matahari.com/static/version1701136719/frontend/Matahari/matahari-child/id_ID/images/cart-empty.gif"  alt="" />
           <h3>Wishlist is empty</h3>
           <Button  className='mt-3' variant='dark'><Link to={'/'}style={{textDecoration:'none',color:'white'}}> <i class="fa-solid fa-arrow-left"></i> Back to Home</Link></Button>

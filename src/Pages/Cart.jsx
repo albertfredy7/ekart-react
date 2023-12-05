@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { emptyCart, removeFromCart } from '../redux/slices/cartSlice'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 function Cart() {
 
   const cartArray = useSelector((state)=>state.cartReducer)
@@ -51,16 +52,16 @@ function Cart() {
           </table>
         </div>
         :
-        <div style={{height:'50vh'}} className='d-flex justify-content-center align-items-center flex-column'>
+        <div style={{height:'60vh'}} className='d-flex justify-content-center align-items-center flex-column'>
         <img src="https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif" alt="" />
         <h3>Your Cart is empty</h3>
-        <Button  className='mt-3' variant='dark'><Link to={'/'}style={{textDecoration:'none',color:'white'}}> <i class="fa-solid fa-arrow-left"></i> Back to Home</Link></Button>
+        <Button  className='mt-3 mb-5' variant='dark'><Link to={'/'}style={{textDecoration:'none',color:'white'}}> <i class="fa-solid fa-arrow-left"></i> Back to Home</Link></Button>
       </div>
         }
         
         
         {cartArray?.length > 0 && (
-          <div className='col-lg-4 m-5'>
+          <div className='col-lg-4 m-5' >
             <div className='card shadow border' style={{background:'#f0f0f0'}}>
               <div className='card-body'>
                 <h5 className='card-title text-center'>Order Summary</h5>
@@ -80,8 +81,8 @@ function Cart() {
                   <h6>Total:</h6>
                   <h6>₹ {cartArray.reduce((total, item) => total + item.price, 0)}</h6>
                 </div>
-                <div className='d-flex '>
-                  <Button variant='primary' className=' w-100 ms-auto mt-5' onClick={handlecheckout}>
+                <div className='d-flex'>
+                  <Button variant='primary' className='w-100 ms-auto mt-5' onClick={handlecheckout}>
                     Checkout
                   </Button>
                 </div>
